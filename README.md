@@ -1,30 +1,27 @@
-# Summer2015
+Summer2015
+==========
+
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/rainbee2214/Summer2015?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Installation Instructions:
+# Installation Instructions:
+We will setup a basic python3 environment with the usual scientific computing packages.
 
-##Mac OS X
-install homebrew
+
+## Mac OS X
+The Mac instructions rely on [homebrew](http://brew.sh), install it first.
 
 ```
 brew install python3
-pip3 install numpy theano  requests jinja2 tornado jsonschema ipython matplotlib
-pip3 install matplotlib
+pip3 install numpy theano requests jinja2 tornado jsonschema ipython matplotlib
 ```
 
 
-##Linux (Ubuntu)
+## Linux (Ubuntu)
 ```
-sudo apt-get intall python3 python3-pip
-sudo apt-get install pkg-config libfreetype6-dev
-sudo pip3 install numpy ipython theano requests jinja2 tornado jsonschema
-git clone http://github.com/matplotlib/matplotlib
-cd matplotlib
-python3 setup.py install
+sudo apt-get install -y pkg-config libfreetype6-dev python3-pip python3-matplotlib python3-numpy python3-tornado python3-scipy ipython3 ipython3-notebook
+sudo pip3 install theano
 ```
 
-##Will open in a web browser:
-```ipython3 notebook```
 
 # Resources
 
