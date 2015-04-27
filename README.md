@@ -3,32 +3,39 @@ Summer2015
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/rainbee2214/Summer2015?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Installation Instructions:
-We will setup a basic python3 environment with the usual scientific computing packages.
+## 1. Installation
 
+### Mac OS X
 
-## Mac OS X
-The Mac instructions rely on [homebrew](http://brew.sh), install it first.
+Please install [Homebrew](http://brew.sh) for Mac before continuing with installation.
 
-```
-brew install python3
-pip3 install numpy theano requests jinja2 tornado jsonschema ipython matplotlib
+```bash
+./install.sh
 ```
 
+### Linux (Ubuntu)
 
-## Linux (Ubuntu)
+```bash
+./install.sh
 ```
-sudo apt-get install -y pkg-config libfreetype6-dev python3-pip python3-matplotlib python3-numpy python3-tornado python3-scipy ipython3 ipython3-notebook
-sudo pip3 install theano
+
+### Windows
+
+*Not supported.*
+
+## 2. Usage
+
+To start the [iPython Notebook](http://ipython.org/notebook.html)
+you can run:
+
+```bash
+./notebook
 ```
 
+## 3. Resources
 
-# Resources
+- [Theano Tutorial](http://deeplearning.net/software/theano/tutorial/)
+- [Numpy Tutorial](http://wiki.scipy.org/Tentative_NumPy_Tutorial)
+- [100 Numpy exercises](https://github.com/rougier/numpy-100)
+- [Theano brodcast example](http://deeplearning.net/software/theano/library/tensor/basic.html#libdoc-tensor-broadcastable)
 
-[Theano Tutorial](http://deeplearning.net/software/theano/tutorial/)
-
-[Numpy Tutorial](http://wiki.scipy.org/Tentative_NumPy_Tutorial)
-
-[100 Numpy exercises](https://github.com/rougier/numpy-100)
-
-[Theano brodcast example](http://deeplearning.net/software/theano/library/tensor/basic.html#libdoc-tensor-broadcastable)
