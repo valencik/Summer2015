@@ -12,8 +12,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # ...
     echo "== Linux Detected =="
     sudo apt-get install -y $PYTHON_VERSION
-    sudo apt-get install -y pkg-config ${PYTHON_VERSION}-pip
-    sudo apt-get build-dep python-matplotlib
+    sudo apt-get install -y pkg-config python3-pip
+    sudo apt-get build-dep python3-matplotlib python3-numpy python3-scipy
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
@@ -69,7 +69,7 @@ fi
 
 echo
 echo "=== Install Python dependencies ==="
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 echo
 echo "All done! You can start developing by running ./notebook"
