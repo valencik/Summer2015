@@ -11,5 +11,6 @@ cache:
 install:
     - ./install.sh
 # command to run tests
-script: nosetests
+script: 
+    - ./lint.sh
 

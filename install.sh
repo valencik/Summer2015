@@ -74,11 +74,11 @@ else
     source `which virtualenvwrapper.sh`
     
     echo
-    echo "=== Create Python Virtual Environment for dependencies ==="
+    echo "=== Create Python Virtual Environment for dependencies named '$VIRTUALE_ENV_NAME' ==="
     mkvirtualenv -p $PYTHON_VERSION $VIRTUAL_ENV_NAME
 
     echo
-    echo "=== Activate Python Virtual Environment: $VIRTUAL_ENV_NAME ==="
+    echo "=== Activate Python Virtual Environment: '$VIRTUAL_ENV_NAME' ==="
     workon $VIRTUAL_ENV_NAME
 
 fi
