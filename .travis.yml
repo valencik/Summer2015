@@ -9,7 +9,7 @@ cache:
     - pip
 # command to install dependencies
 install:
-    - ./install.sh
+    - travis_wait ./install.sh
 # command to run tests
 script: 
     - ./lint.sh
