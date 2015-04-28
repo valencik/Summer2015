@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -e
+
+#set -e
 # Any subsequent(*) commands which fail will cause the shell script to exit immediately
 
 VIRTUAL_ENV_NAME="summer2015"
@@ -14,8 +15,21 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # ...
     echo "== Linux Detected =="
     sudo apt-get install -y $PYTHON_VERSION
-    sudo apt-get install -y pkg-config python3-pip
-    sudo apt-get build-dep python3-matplotlib python3-numpy python3-scipy
+
+    echo "=== Check if Ubuntu 12.04 or higher ==="
+    # See http://ubuntuforums.org/showthread.php?t=1803754
+    verNum=$( lsb_release -r | awk '{ print $2 }' | sed 's/[.]//' )
+    if [ $verNum -eq 1204 ]; then
+        # Ubuntu 12.04
+        echo "Detected Ubuntu 12.04."
+        sudo apt-get install -y pkg-config python-pip
+        sudo apt-get build-dep python-matplotlib python-numpy python-scipy
+    else
+        # Assume Ubuntu 13.04 or higher
+        echo "Assuming Ubuntu version 13.04 or higher."
+        sudo apt-get install -y pkg-config python3-pip
+        sudo apt-get build-dep python3-matplotlib python3-numpy python3-scipy
+    fi
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
