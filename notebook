@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 NOTEBOOK_DIR=notebooks/
-ipython notebook --notebook-dir=$NOTEBOOK_DIR
+ipython3 notebook --notebook-dir=$NOTEBOOK_DIR
 
