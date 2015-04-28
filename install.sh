@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+# Any subsequent(*) commands which fail will cause the shell script to exit immediately
 
 VIRTUAL_ENV_NAME="summer2015"
 PYTHON_VERSION=python3
