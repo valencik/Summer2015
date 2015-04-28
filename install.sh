@@ -14,11 +14,13 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo apt-get install -y $PYTHON_VERSION
     sudo apt-get install -y pkg-config ${PYTHON_VERSION}-pip
     sudo apt-get build-dep python-matplotlib
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     echo "== Mac OS X Detected =="
     echo "Install $PYTHON_VERSION..."
     brew install $PYTHON_VERSION
+
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     # POSIX compatibility layer and Linux environment emulation for Windows
     echo "== Windows (Cygwin) Detected =="
@@ -44,23 +46,26 @@ fi
 
 # Check if virtualenvwrapper installed
 echo
+echo "== Check for virtualenvwrapper =="
 which virtualenvwrapper.sh > /dev/null
 if [ $? -ne 0 ]; then
-    echo "Please first install virtualenvwrapper from \
+    echo "[Optional] It is recommended that you install and use virtualenvwrapper from \
         http://virtualenvwrapper.readthedocs.org/en/latest/install.html#basic-installation"
-    exit
 else
+    echo "Found virtualenvwrapper, will install Python dependencies in a virtualenv."
+
     # 'which' will print absolute path to virtualenvwrapper.sh
     source `which virtualenvwrapper.sh`
+    
+    echo
+    echo "=== Create Python Virtual Environment for dependencies ==="
+    mkvirtualenv -p $PYTHON_VERSION $VIRTUAL_ENV_NAME
+
+    echo
+    echo "=== Activate Python Virtual Environment: $VIRTUAL_ENV_NAME ==="
+    workon $VIRTUAL_ENV_NAME
+
 fi
-
-echo
-echo "=== Create Python Virtual Environment for dependencies ==="
-mkvirtualenv -p $PYTHON_VERSION $VIRTUAL_ENV_NAME
-
-echo
-echo "=== Activate Python Virtual Environment: $VIRTUAL_ENV_NAME ==="
-workon $VIRTUAL_ENV_NAME
 
 echo
 echo "=== Install Python dependencies ==="
