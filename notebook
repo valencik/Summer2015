@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+VIRTUAL_ENV_NAME="summer2015"
+NOTEBOOK_DIR=notebooks/
+
+# Check if virtualenvwrapper installed
+echo
+echo "== Check for virtualenvwrapper =="
+which virtualenvwrapper.sh > /dev/null
+HAS_VIRTUALENVWRAPPER=$?
+if [ $HAS_VIRTUALENVWRAPPER -ne 0 ]; then
+    echo "[Optional] It is recommended that you install and use virtualenvwrapper from \
+        http://virtualenvwrapper.readthedocs.org/en/latest/install.html#basic-installation"
+else
+    echo "Found virtualenvwrapper installed."
+
+    # 'which' will print absolute path to virtualenvwrapper.sh
+    source `which virtualenvwrapper.sh`
+
+    echo
+    echo "=== Activate Python Virtual Environment: '$VIRTUAL_ENV_NAME' ==="
+    workon $VIRTUAL_ENV_NAME
+
+fi
+
+echo "== Start iPython Notebook server =="
+ipython3 notebook --notebook-dir=$NOTEBOOK_DIR
+
+if [ $HAS_VIRTUALENVWRAPPER -ne 0 ]; then
+    echo ""    
+else
+    echo "== Deactivate Python Virtual Environment =="
+    deactivate
+fi
+
